@@ -35,8 +35,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       delete_branch_on_merge: true,
       dependabot_alerts_enabled: true,
       dependabot_security_updates_enabled: true,
-      secret_scanning_enabled: true,
-      secret_scanning_push_protection_enabled: true,
       has_discussions: true,
       has_issues: true,
       has_projects: true,
