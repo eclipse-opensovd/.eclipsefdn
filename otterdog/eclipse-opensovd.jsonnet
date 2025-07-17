@@ -10,7 +10,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
   settings+: {
     discussion_source_repository: "eclipse-opensovd/opensovd",
     has_discussions: true,
-
     description: "",
     name: "Eclipse OpenSOVD",
     workflows+: {
@@ -46,10 +45,10 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_issues: true,
       has_projects: true,
       has_wiki: true,
-      code_scanning_default_setup_enabled: true,
-      code_scanning_default_languages+: [
-        "actions",
-      ],
+      #code_scanning_default_setup_enabled: true,
+      #code_scanning_default_languages+: [
+      #  "actions",
+      #],
       description: "OpenSOVD main repository",
       rulesets: [
         orgs.newRepoRuleset('main') {
@@ -96,7 +95,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       allow_rebase_merge: true,
       allow_squash_merge: true,
       allow_update_branch: false,
-      
       delete_branch_on_merge: true,
       dependabot_alerts_enabled: true,
       dependabot_security_updates_enabled: true,
