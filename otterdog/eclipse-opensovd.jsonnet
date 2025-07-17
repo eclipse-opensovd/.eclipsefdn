@@ -65,21 +65,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
         },
       ],
     },
-    orgs.newRepo('.github') {
-      description: "Houses the organisation README",
-      code_scanning_default_setup_enabled: true,
-      code_scanning_default_languages+: [
-        "actions",
-      ],
-      rulesets: [
-        orgs.newRepoRuleset('main') {
-          include_refs+: [
-            "refs/heads/main"
-          ],
-          required_pull_request+: default_review_rule,
-        },
-      ],
-    },
     orgs.newRepo('mdd-converter') {
       allow_merge_commit: false,
       allow_rebase_merge: true,
