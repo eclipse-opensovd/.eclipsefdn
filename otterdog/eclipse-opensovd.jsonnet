@@ -26,9 +26,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       delete_branch_on_merge: false,
       description: "OpenSOVD website",
       web_commit_signoff_required: false,
-       topics+: [
-        "sovd"
-      ],
       workflows+: {
         default_workflow_permissions: "write",
       },
@@ -45,16 +42,15 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_issues: true,
       has_projects: true,
       has_wiki: true,
-      #code_scanning_default_setup_enabled: true,
-      #code_scanning_default_languages+: [
-      #  "actions",
-      #],
+      code_scanning_default_setup_enabled: true,
+      code_scanning_default_languages+: [
+        "actions",
+      ],
       description: "OpenSOVD main repository",
       rulesets: [
         orgs.newRepoRuleset('main') {
           include_refs+: [
             "refs/heads/main",
-            "refs/heads/timkl7/test-codeowners",
           ],
           required_pull_request+: default_review_rule,
         },
