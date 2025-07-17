@@ -51,7 +51,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       ],
     },
     orgs.newRepo('module_template') {
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       description: "OpenSOVD module template repository",
