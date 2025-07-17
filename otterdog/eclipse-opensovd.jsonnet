@@ -9,8 +9,8 @@ local default_review_rule = orgs.newPullRequest() {
 
 orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
   settings+: {
-    #discussion_source_repository: "eclipse-opensovd/opensovd",
-    #has_discussions: true,
+    discussion_source_repository: "eclipse-opensovd/opensovd",
+    has_discussions: true,
     description: "",
     name: "Eclipse OpenSOVD",
     workflows+: {
@@ -45,12 +45,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
         orgs.newRepoRuleset('main') {
           include_refs+: [
             "refs/heads/main"
-          ],
-          required_pull_request+: default_review_rule,
-        },
-        orgs.newRepoRuleset('test-codeowners') {
-          include_refs+: [
-            "refs/heads/timkl7/test-codeowners"
           ],
           required_pull_request+: default_review_rule,
         },
