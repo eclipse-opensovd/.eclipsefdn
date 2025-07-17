@@ -8,8 +8,8 @@ local default_review_rule = {
 
 orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
   settings+: {
-    discussion_source_repository: "eclipse-opensovd/opensovd",
-    has_discussions: true,
+    #discussion_source_repository: "eclipse-opensovd/opensovd",
+    #has_discussions: true,
     description: "",
     name: "Eclipse OpenSOVD",
     workflows+: {
