@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-local default_review_rule = {
+local default_review_rule = orgs.newPullRequest() {
   dismisses_stale_reviews: true,
   required_approving_review_count: 1,
   requires_code_owner_review: true,
@@ -15,7 +15,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
     name: "Eclipse OpenSOVD",
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
-      default_workflow_permissions: "write",
     },
   },
   _repositories+:: [
@@ -27,9 +26,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       delete_branch_on_merge: false,
       description: "OpenSOVD website",
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
     },
     orgs.newRepo('opensovd') {
       allow_merge_commit: false,
@@ -44,14 +40,17 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_projects: true,
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
-      code_scanning_default_languages+: [
-        "actions",
-      ],
       description: "OpenSOVD main repository",
-      rulesets: [
+      rulesets+: [
         orgs.newRepoRuleset('main') {
           include_refs+: [
             "refs/heads/main"
+          ],
+          required_pull_request+: default_review_rule,
+        },
+        orgs.newRepoRuleset('test-codeowners') {
+          include_refs+: [
+            "refs/heads/timkl7/test-codeowners"
           ],
           required_pull_request+: default_review_rule,
         },
