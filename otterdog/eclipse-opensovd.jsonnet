@@ -48,6 +48,12 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
           ],
           required_pull_request+: default_review_rule,
         },
+        orgs.newRepoRuleset('test-codeowners') {
+          include_refs+: [
+            "refs/heads/timkl7/test-codeowners"
+          ],
+          required_pull_request+: default_review_rule,
+        },
       ],
     },
   ],
