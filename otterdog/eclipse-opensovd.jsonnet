@@ -10,6 +10,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
   settings+: {
     discussion_source_repository: "eclipse-opensovd/opensovd",
     has_discussions: true,
+
     description: "",
     name: "Eclipse OpenSOVD",
     workflows+: {
@@ -19,7 +20,9 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
   },
   _repositories+:: [
     orgs.newRepo('website') {
-      allow_merge_commit: true,
+      allow_merge_commit: false,
+      allow_squash_merge: true,
+      allow_rebase_merge: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "OpenSOVD website",
