@@ -9,8 +9,6 @@ local default_review_rule = orgs.newPullRequest() {
 
 orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
   settings+: {
-    discussion_source_repository: "eclipse-opensovd/opensovd",
-    has_discussions: true,
     description: "",
     name: "Eclipse OpenSOVD",
     workflows+: {
@@ -90,7 +88,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
       code_scanning_default_languages+: [
-        "actions",
+        "rust",
       ],
       description: "classic diagnostic adapter repository",
       rulesets: [
