@@ -50,22 +50,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
         },
       ],
     },
-    orgs.newRepo('module_template') {
-      allow_merge_commit: false,
-      allow_update_branch: false,
-      code_scanning_default_setup_enabled: true,
-      description: "OpenSOVD module template repository",
-      is_template: true,  // Enable template repository functionality
-      rulesets: [
-        orgs.newRepoRuleset('main') {
-          include_refs+: [
-            "refs/heads/main"
-          ],
-          required_pull_request+: default_review_rule,
-        },
-      ],
-    },
-    orgs.newRepo('mdd-converter') {
+    orgs.newRepo('odx-converter') {
       allow_merge_commit: false,
       allow_rebase_merge: true,
       allow_squash_merge: true,
@@ -77,12 +62,11 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_issues: true,
       has_projects: true,
       has_wiki: true,
-      template_repository: "eclipse-opensovd/module_template",
       code_scanning_default_setup_enabled: true,
       code_scanning_default_languages+: [
         "c-cpp",
       ],
-      description: "mdd converter repository",
+      description: "odx converter repository",
       rulesets: [
         orgs.newRepoRuleset('main') {
           include_refs+: [
@@ -104,7 +88,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_issues: true,
       has_projects: true,
       has_wiki: true,
-      template_repository: "eclipse-opensovd/module_template",
       code_scanning_default_setup_enabled: true,
       code_scanning_default_languages+: [
         "c-cpp",
