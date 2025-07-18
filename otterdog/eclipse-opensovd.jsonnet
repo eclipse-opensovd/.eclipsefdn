@@ -88,7 +88,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
       code_scanning_default_languages+: [
-        "action",
+        "actions",
       ],
       description: "classic diagnostic adapter repository",
       rulesets: [
