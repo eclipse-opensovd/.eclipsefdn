@@ -64,7 +64,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
       code_scanning_default_languages+: [
-        "c-cpp",
+        "kotlin",
       ],
       description: "odx converter repository",
       rulesets: [
@@ -90,7 +90,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
       code_scanning_default_languages+: [
-        "c-cpp",
+        "actions",
       ],
       description: "classic diagnostic adapter repository",
       rulesets: [
