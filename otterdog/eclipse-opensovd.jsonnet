@@ -9,8 +9,6 @@ local default_review_rule = orgs.newPullRequest() {
 
 orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
   settings+: {
-    #discussion_source_repository: "eclipse-opensovd/opensovd",
-    #has_discussions: true,
     description: "",
     name: "Eclipse OpenSOVD",
     workflows+: {
@@ -48,9 +46,55 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
           ],
           required_pull_request+: default_review_rule,
         },
-        orgs.newRepoRuleset('test-codeowners') {
+      ],
+    },
+    orgs.newRepo('odx-converter') {
+      allow_merge_commit: false,
+      allow_rebase_merge: true,
+      allow_squash_merge: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: true,
+      dependabot_alerts_enabled: true,
+      dependabot_security_updates_enabled: true,
+      has_discussions: true,
+      has_issues: true,
+      has_projects: true,
+      has_wiki: true,
+      code_scanning_default_setup_enabled: true,
+      code_scanning_default_languages+: [
+        "java-kotlin",
+      ],
+      description: "odx converter repository",
+      rulesets: [
+        orgs.newRepoRuleset('main') {
           include_refs+: [
-            "refs/heads/timkl7/test-codeowners"
+            "refs/heads/main"
+          ],
+          required_pull_request+: default_review_rule,
+        },
+      ],
+    },
+    orgs.newRepo('classic-diagnostic-adapter') {
+      allow_merge_commit: false,
+      allow_rebase_merge: true,
+      allow_squash_merge: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: true,
+      dependabot_alerts_enabled: true,
+      dependabot_security_updates_enabled: true,
+      has_discussions: true,
+      has_issues: true,
+      has_projects: true,
+      has_wiki: true,
+      code_scanning_default_setup_enabled: true,
+      code_scanning_default_languages+: [
+        "actions",
+      ],
+      description: "classic diagnostic adapter repository",
+      rulesets: [
+        orgs.newRepoRuleset('main') {
+          include_refs+: [
+            "refs/heads/main"
           ],
           required_pull_request+: default_review_rule,
         },
