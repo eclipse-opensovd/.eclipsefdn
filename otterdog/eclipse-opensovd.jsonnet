@@ -62,9 +62,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
         "actions",
       ],
       description: "OpenSOVD main repository",
-      code_scanning_default_languages+: [
-        "actions",
-      ],
       rulesets+: [
         orgs.newRepoRuleset('main') {
           include_refs+: [
