@@ -85,6 +85,19 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
       description: "odx converter repository",
+      variables: [
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-opensovd_odx-converter",
+        },
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-opensovd",
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.opensovd/sonarcloud.io/token-odx-converter",
+        },
+      ],
       rulesets: [
         orgs.newRepoRuleset('main') {
           include_refs+: [
@@ -108,6 +121,19 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
       description: "classic diagnostic adapter repository",
+      variables: [
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-opensovd_classic-diagnostic-adapter",
+        },
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-opensovd",
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.opensovd/sonarcloud.io/token-classic-diagnostic-adapter",
+        },
+      ],
       rulesets: [
         orgs.newRepoRuleset('main') {
           include_refs+: [
@@ -131,6 +157,19 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
       description: "OpenSOVD core containing Server, Client and Gateway",
+      variables: [
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-opensovd_opensovd-core",
+        },
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-opensovd",
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.opensovd/sonarcloud.io/opensovd-core",
+        },
+      ],
       rulesets: [
         orgs.newRepoRuleset('main') {
           include_refs+: [
