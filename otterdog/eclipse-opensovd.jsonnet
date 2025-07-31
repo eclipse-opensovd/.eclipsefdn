@@ -84,7 +84,13 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_projects: true,
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
-      description: "odx converter repository",
+      description: "🚗 ODX to MDD Converter 🚀",
+      homepage: "",
+      topics+: [
+        "automotive",
+        "odx",
+        "sovd"
+      ],
       rulesets: [
         orgs.newRepoRuleset('main') {
           include_refs+: [
@@ -106,8 +112,9 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_issues: true,
       has_projects: true,
       has_wiki: true,
+      homepage: "",
       code_scanning_default_setup_enabled: true,
-      description: "classic diagnostic adapter repository",
+      description: "🚗 Classic Diagnostic Adapter 🏥",
       rulesets: [
         orgs.newRepoRuleset('main') {
           include_refs+: [
@@ -115,6 +122,13 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
           ],
           required_pull_request+: default_review_rule,
         },
+      ],
+      topics+: [
+        "automotive",
+        "classic-diagnostic-adapter",
+        "doip",
+        "sovd",
+        "uds"
       ],
     },
     orgs.newRepo('opensovd-core') {
