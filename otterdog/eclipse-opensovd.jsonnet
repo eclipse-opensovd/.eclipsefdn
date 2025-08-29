@@ -127,6 +127,9 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_wiki: true,
       homepage: "",
       code_scanning_default_setup_enabled: true,
+      code_scanning_default_languages+: [
+        "actions",
+      ],
       description: "🚗 Classic Diagnostic Adapter 🏥",
       variables: [
         orgs.newRepoVariable('SONAR_PROJECT_KEY') {
