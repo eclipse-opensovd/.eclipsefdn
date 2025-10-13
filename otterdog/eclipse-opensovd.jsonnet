@@ -71,6 +71,32 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
         },
       ],
     },
+    orgs.newRepo('fault-lib') {
+      allow_merge_commit: false,
+      allow_rebase_merge: true,
+      allow_squash_merge: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: true,
+      dependabot_alerts_enabled: true,
+      dependabot_security_updates_enabled: true,
+      has_discussions: true,
+      has_issues: true,
+      has_projects: true,
+      has_wiki: true,
+      code_scanning_default_setup_enabled: true,
+      code_scanning_default_languages+: [
+        "actions",
+      ],
+      description: "OpenSOVD Fault Library",
+      rulesets+: [
+        orgs.newRepoRuleset('main') {
+          include_refs+: [
+            "refs/heads/main"
+          ],
+          required_pull_request+: default_review_rule,
+        },
+      ],
+    },
     orgs.newRepo('odx-converter') {
       allow_merge_commit: false,
       allow_rebase_merge: true,
