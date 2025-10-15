@@ -84,9 +84,6 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_projects: true,
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
-      code_scanning_default_languages+: [
-        "actions",
-      ],
       description: "OpenSOVD Fault Library",
       rulesets+: [
         orgs.newRepoRuleset('main') {
@@ -207,7 +204,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       ],
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
-          value: "pass:bots/automotive.opensovd/sonarcloud.io/opensovd-core",
+          value: "pass:bots/automotive.opensovd/sonarcloud.io/token-opensovd-core",
         },
       ],
       rulesets: [
