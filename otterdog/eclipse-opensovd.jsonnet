@@ -264,6 +264,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_issues: true,
       has_projects: true,
       has_wiki: true,
+      gh_pages_build_type: "workflow",
       code_scanning_default_setup_enabled: true,
       description: "Tracing appender and wrapper for libdlt",
       rulesets+: [
