@@ -15,6 +15,11 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  secrets+: [
+    orgs.newOrgSecret('CRATES_API_TOKEN') {
+      value: "pass:bots/automotive.opensovd/crates.io/api-token",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('website') {
       allow_merge_commit: false,
