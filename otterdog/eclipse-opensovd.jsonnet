@@ -177,6 +177,16 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
           required_pull_request+: default_review_rule,
         },
       ],
+      gh_pages_build_type: "workflow",
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main",
+            "gh-pages/*"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
       topics+: [
         "automotive",
         "classic-diagnostic-adapter",
