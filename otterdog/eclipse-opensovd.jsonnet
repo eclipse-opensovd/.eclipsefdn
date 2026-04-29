@@ -208,6 +208,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_projects: true,
       has_wiki: true,
       code_scanning_default_setup_enabled: true,
+      gh_pages_build_type: "workflow",
       description: "OpenSOVD core containing Server, Client and Gateway",
       variables: [
         orgs.newRepoVariable('SONAR_PROJECT_KEY') {
