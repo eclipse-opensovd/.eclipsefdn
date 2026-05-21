@@ -375,5 +375,48 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
         },
       ],
     },
+    orgs.newRepo('mdd-ui') {
+      allow_merge_commit: false,
+      allow_rebase_merge: true,
+      allow_squash_merge: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: true,
+      dependabot_alerts_enabled: true,
+      dependabot_security_updates_enabled: true,
+      has_discussions: true,
+      has_issues: true,
+      has_projects: true,
+      has_wiki: true,
+      homepage: "",
+      code_scanning_default_setup_enabled: true,
+      description: "MDD UI",
+      rulesets: [
+        orgs.newRepoRuleset('main') {
+          include_refs+: [
+            "refs/heads/main"
+          ],
+          required_pull_request+: default_review_rule,
+        },
+      ],
+      gh_pages_build_type: "workflow",
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main",
+            "gh-pages/*"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+      topics+: [
+        "automotive",
+        "mdd",
+        "tooling",
+        "ui",
+        "doip",
+        "sovd",
+        "uds"
+      ],
+    },
   ],
 }
