@@ -389,7 +389,7 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
       has_wiki: true,
       homepage: "",
       code_scanning_default_setup_enabled: true,
-      description: "MDD UI",
+      description: "Viewer & MCP for MDD files",
       rulesets: [
         orgs.newRepoRuleset('main') {
           include_refs+: [
