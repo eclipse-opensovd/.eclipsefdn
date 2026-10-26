@@ -454,5 +454,35 @@ orgs.newOrg('automotive.opensovd', 'eclipse-opensovd') {
         "tls",
       ],
     },
+    orgs.newRepo('cda-addons') {
+      allow_merge_commit: false,
+      allow_rebase_merge: true,
+      allow_squash_merge: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: true,
+      dependabot_alerts_enabled: true,
+      dependabot_security_updates_enabled: true,
+      has_discussions: true,
+      has_issues: true,
+      has_projects: false,
+      has_wiki: false,
+      code_scanning_default_setup_enabled: true,
+      description: "Community-provided plugins and additions for the Classic Diagnostic Adapter",
+      rulesets: [
+        orgs.newRepoRuleset('main') {
+          include_refs+: [
+            "refs/heads/main"
+          ],
+          required_pull_request+: default_review_rule,
+        },
+      ],
+      topics+: [
+        "automotive",
+        "classic-diagnostic-adapter",
+        "community",
+        "plugins",
+        "sovd"
+      ],
+    },
   ],
 }
